@@ -1,0 +1,26 @@
+
+构建工具：gulp、grunt、fis		主要包括自动刷新页面、编译sass、压缩代码等重复任务。
+
+模块化方案：browserify、webpack、seajs、requirejs
+
+测试工具: browser-sync,Fiddler,weinre,微信调试工具
+
+### 提高开发效率
+* 使用工具
+* 使用新技术
+* 增加工作经验
+
+### 前端工程化：
+1. 初始，生成基础目录解构和样式库。
+2. 开发，实时预览。
+3. 构建，预编译、合并、压缩。
+4. 发布，将构建后的静态文件发布上线。
+5. 打包，资源路径转换，源码打包。
+
+常用库：
+
+css: normalize.css	--->	取代css reset
+		sassCore  --->  支持ie7、ie8等，实现css3等
+    spritesmith
+
+js: isomorphic-fetch	--->	使浏览器支持fetch函数

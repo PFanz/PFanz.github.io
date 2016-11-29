@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title> | Fanz的博客</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.1.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Fanz的博客</h1><a id="logo" href="/.">Fanz的博客</a><p class="description">欢迎来到我的博客，希望自己能够记录自己成长的点滴。</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-meta">Nov 28, 2016<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><a data-thread-key="2016/11/28/React Docs/" href="/2016/11/28/React Docs/#comments" class="ds-thread-count"></a><div class="post-content"><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>React在codepen上提供了一个Hello，World项目事例，只需打开<a href="http://codepen.io/gaearon/pen/rrpgNB?editors=0010" target="_blank" rel="external">网站</a>，即可尝试React。<br>另外还提供了一个<a href="https://facebook.github.io/react/downloads/single-file-example.html" target="_blank" rel="external">html文件</a>的Hello，World项目，项目中引用CDN的react.js、react-dom.js以及用于编译babel的babel.min.js，运行比较缓慢，只适合学习语法使用。</p>
+<h2 id="创建单页面应用"><a href="#创建单页面应用" class="headerlink" title="创建单页面应用"></a>创建单页面应用</h2><p>创建React应用的最好方法是单页面应用，这里是最好方法，也是可以创建多页面应用的。可以通过官方方法去创建你的应用：</p>
+<pre><code class="shell">npm install -g create-react-app
+create-create-app hello-world
+cd hello-world
+npm start
+</code></pre>
+<p>这里不涉及任何后端逻辑和数据库，可以使用任何你想用的后端。create-react-app中使用了Webpack，Babel和ESLint，但是你可以自己去配置他们。</p>
+<h3 id="将React加入一个现有的应用"><a href="#将React加入一个现有的应用" class="headerlink" title="将React加入一个现有的应用"></a>将React加入一个现有的应用</h3><p>使用<code>npm install --save react react-dom</code>安装React。<br>将其导入你的代码中，如：</p>
+<pre><code class="javascript"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;
+<span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>,
+  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)
+)
+</code></pre>
+<p>这段代码应该被包含在一个拥有id为root的HTML元素，所以你的HTML文件需要<code>&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</code><br>当你使用上面方法使用React的时候，需要使用预设为es2015和react的Babel进行转化代码。使用React在生产环境的时候，设置NODE_ENV为”production”。</p>
+<h3 id="使用ES6和JSX"><a href="#使用ES6和JSX" class="headerlink" title="使用ES6和JSX"></a>使用ES6和JSX</h3><p>建议是用Babel将你的ES6和JSX代码转换为JavaScript代码，Babel可以有很多不同的配置，但是确保里面包含<code>babel-preset-react</code>和<code>babel-preset-es2015</code>。</p>
+<h3 id="使用CDN"><a href="#使用CDN" class="headerlink" title="使用CDN"></a>使用CDN</h3><p>如果不想使用npm，可以使用CDN</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/react@15/dist/react.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/react-dom@15/dist/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+</code></pre>
+<p>@后面数字可以指定版本</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/react@15/dist/react.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/react-dom@15/dist/react-dom.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+</code></pre>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p>在JSX中，可以在任意地方插入JavaScript代码，只需要将JavaScript放在大括号中即可。下面的代码都是合法的：</p>
+<pre><code class="jsx"><span class="function"><span class="keyword">function</span> <span class="title">formatName</span>(<span class="params">user</span>) </span>{
+  <span class="keyword">return</span> user.firstName + <span class="string">' '</span> + user.lastName;
+}
+
+<span class="keyword">const</span> user = {
+  <span class="attr">firstName</span>: <span class="string">'Harper'</span>,
+  <span class="attr">lastName</span>: <span class="string">'Perez'</span>
+};
+
+<span class="keyword">const</span> element = (
+  <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>
+    Hello, {formatName(user)}!
+  <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>
+);
+
+ReactDOM.render(
+  element,
+  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)
+);
+</code></pre>
+<p>将JSX代码放在小括号中，像HTML代码一样换行，可以方便阅读。</p>
+<h4 id="JSX也是表达式"><a href="#JSX也是表达式" class="headerlink" title="JSX也是表达式"></a>JSX也是表达式</h4><p>JSX最后也被编译成JavaScript代码，这就以为着JSX可以赋值给一个JavaScript变量，可以作为方法的参数，可以被方法返回。</p>
+<h4 id="JSX添加HTML属性"><a href="#JSX添加HTML属性" class="headerlink" title="JSX添加HTML属性"></a>JSX添加HTML属性</h4><p>可以用字符串设置属性，也可以通过使用{}将JavaScript表达式赋值给属性。</p>
+<h4 id="闭合JSX"><a href="#闭合JSX" class="headerlink" title="闭合JSX"></a>闭合JSX</h4><p>如果JSX是空的可以使用<code>/&gt;</code>来闭合标签，如果包含其他标签，也可以使用&lt;/<em>*</em>&gt;闭合。<br>虽然JSX很接近HTML，但是还是有些不同，比如属性使用小驼峰法命名，class使用className，for使用forHtml等。</p>
+<h4 id="JSX防止注入攻击"><a href="#JSX防止注入攻击" class="headerlink" title="JSX防止注入攻击"></a>JSX防止注入攻击</h4><p>默认情况下，React DOM在渲染JSX之前会对其进行编码。</p>
+<h4 id="JSX描述对象"><a href="#JSX描述对象" class="headerlink" title="JSX描述对象"></a>JSX描述对象</h4><p>Babel会将JSX转化为React.createElement()形式，比如下面这样：</p>
+<pre><code class="jsx"><span class="keyword">const</span> element = (
+  <span class="xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">className</span>=<span class="string">"greeting"</span>&gt;</span>
+    Hello, world!
+  <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>
+)
+</code></pre>
+<p>转化为</p>
+<pre><code class="javascript"><span class="keyword">const</span> element = React.createElement(
+  <span class="string">'h1'</span>,
+  {<span class="attr">className</span>: <span class="string">'greeting'</span>},
+  <span class="string">'Hello, world!'</span>
+);
+</code></pre>
+<p>React.createElement会对你的代码进行一些检查，但是本质上就是将其转化成一个对象：</p>
+<pre><code class="javascript"><span class="keyword">const</span> element = {
+  <span class="attr">type</span>: <span class="string">'h1'</span>,
+  <span class="attr">props</span>: {
+    <span class="attr">className</span>: <span class="string">'greeting'</span>,
+    <span class="attr">children</span>: <span class="string">'Hello, world'</span>
+  }
+}
+</code></pre>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>将你的页面分成一个个组件，每个组件都是独立的、可以重复使用的。组件就像JavaScript中的方法，可以接受一些输入参数，返回React元素</p>
+<h4 id="Funtional-和-Class-组件"><a href="#Funtional-和-Class-组件" class="headerlink" title="Funtional 和 Class 组件"></a>Funtional 和 Class 组件</h4><p>定义组件最简单的方式是使用JavaScript方法：</p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span> (<span class="params">props</span>) </span>{
+  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, {props.name}<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>
+}
+这个方法就是个有效的React组件，因为它接受props作为参数，并且返回了一个React元素。
+
+另外也可以使用ES6中的类(<span class="class"><span class="keyword">class</span>)来定义组件：
+```<span class="title">javascript</span>
+<span class="title">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>{
+  render () {
+    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, {this.props.name}<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>
+  }
+}
+</code></pre>
+<p>上面两种定义组件的方法是等价的。<br>但是Class组件能够添加一些额外的功能，我们将在下面讨论。在不需要这些额外的方法，可以使用Functional组件。</p>
+<h4 id="渲染组件"><a href="#渲染组件" class="headerlink" title="渲染组件"></a>渲染组件</h4><p>渲染如下：</p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>{
+  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, {props.name}<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;
+}
+
+<span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">Welcome</span> <span class="attr">name</span>=<span class="string">"Sara"</span> /&gt;</span>;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);</span>
+</code></pre>
+<p>过程：</p>
+<ol>
+<li>调用ReactDOM.render()方法，参数为自定义组件<welcome name="Sara">。</welcome></li>
+<li>React调用组件Welcome，传递<code>{name=&quot;Sara&quot;}</code>作为参数。</li>
+<li>Welcome组件返回<code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code>。</li>
+<li>React将<code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code>更新到页面。</li>
+</ol>
+<h4 id="组件组合"><a href="#组件组合" class="headerlink" title="组件组合"></a>组件组合</h4><p>组件可以任意组合。<br>通常情况，React应用中在最顶端是一个<code>App</code>组件。组件必须有一个根元素，也就是所有元素都得包裹起来。</p>
+<h4 id="提取组件"><a href="#提取组件" class="headerlink" title="提取组件"></a>提取组件</h4><p>不要担心组件被拆分的太小。下面是一个对组件进行拆分的例子。<br>Comment组件：  </p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">Comment</span>(<span class="params">props</span>) </span>{
+  <span class="keyword">return</span> (
+    <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"Comment"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"UserInfo"</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">img</span> <span class="attr">className</span>=<span class="string">"Avatar"</span>
+          <span class="attr">src</span>=<span class="string">{props.author.avatarUrl}</span>
+          <span class="attr">alt</span>=<span class="string">{props.author.name}</span>
+        /&gt;</span>
+        <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"UserInfo-name"</span>&gt;</span>
+          {props.author.name}
+        <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+      <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"Comment-text"</span>&gt;</span>
+        {props.text}
+      <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"Comment-date"</span>&gt;</span>
+        {formatDate(props.date)}
+      <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  );
+}</span>
+</code></pre>
+<p>在Comment组件中，使用了<code>author (object)</code>，<code>text (string)</code>，<code>date (date)</code>来描述这个对象。这样的组件因为组合的原因是很难复用的。</p>
+<p>第一步，提取出一个<code>Avatar</code>组件：</p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">Avatar</span>(<span class="params">props</span>) </span>{
+  <span class="keyword">return</span> (
+    <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">className</span>=<span class="string">"Avatar"</span>
+      <span class="attr">src</span>=<span class="string">{props.user.avatarUrl}</span>
+      <span class="attr">alt</span>=<span class="string">{props.user.name}</span>
+    /&gt;</span>
+  );
+}</span>
+</code></pre>
+<p>这里的<code>Avatar</code>组件我们系统他更通用，所以说用了<code>user</code>而不是<code>author</code>。<br>根据组件去命名参数，而不是根据使用上下文。</p>
+<p>下一步是提取<code>UserInfo</code>组件，这里使用了上面提取的<code>Avatar</code>组件：</p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">UserInfo</span>(<span class="params">props</span>) </span>{
+  <span class="keyword">return</span> (
+    <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"UserInfo"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">Avatar</span> <span class="attr">user</span>=<span class="string">{props.user}</span> /&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"UserInfo-name"</span>&gt;</span>
+        {props.user.name}
+      <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  );
+}</span>
+</code></pre>
+<p>这样，我们的<code>Comment</code>组件就成了下面的样子：</p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">Comment</span>(<span class="params">props</span>) </span>{
+  <span class="keyword">return</span> (
+    <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"Comment"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">UserInfo</span> <span class="attr">user</span>=<span class="string">{props.author}</span> /&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"Comment-text"</span>&gt;</span>
+        {props.text}
+      <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"Comment-date"</span>&gt;</span>
+        {formatDate(props.date)}
+      <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  );
+}</span>
+</code></pre>
+<h4 id="Props是只读的"><a href="#Props是只读的" class="headerlink" title="Props是只读的"></a>Props是只读的</h4><p>无论是Funcional还是Class组件，都是不能够修改props的。</p>
+<pre><code class="javascript"><span class="comment">// 下面这个是纯函数，因为它没有试图改变自己的输入，并且对相同的输入会有相同的输出。</span>
+<span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>{
+  <span class="keyword">return</span> a + b;
+}
+<span class="comment">// 下面这个不是纯函数，因为他改变了输入的值</span>
+<span class="function"><span class="keyword">function</span> <span class="title">withdraw</span>(<span class="params">account, amount</span>) </span>{
+  account.total -= amount;
+}
+</code></pre>
+<p>通过官方这个例子，可以明白纯函数有两点，一是相同的输入就会有相同的输出，第二点是不会更改输入的参数。</p>
+<p>所有的React组件对于props参数必须像纯函数一样，也就是不会试图去修改props，并且对于相同的props会有相同的输出。<br>当然，React也提供了随时间动态变化组件的方法，state允许根据用户行为、网络反馈等改变React组件的输出形式，这并不违背React纯函数原则。</p>
+<h2 id="state-和-生命周期"><a href="#state-和-生命周期" class="headerlink" title="state 和 生命周期"></a>state 和 生命周期</h2><p>请看下面一段代码：</p>
+<pre><code class="javascript"><span class="keyword">const</span> Clock = (
+  <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>It is {new Date().toLocaleTimeString()}.<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+);
+ReactDOM.render(
+  <span class="xml"><span class="tag">&lt;<span class="name">Clock</span> /&gt;</span>,
+  document.getElementById('root')
+);</span>
+</code></pre>
+<p>这段代码只能够显示一个Hello,world!与一个生成页面的时间。如果想要时间不停的更新，就需要使用setInterval()不停的去执行。</p>
+<pre><code class="javascript"><span class="comment">// 这样</span>
+<span class="function"><span class="keyword">function</span> <span class="title">tick</span>(<span class="params"></span>) </span>{
+  <span class="keyword">const</span> Clock = (
+    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">h2</span>&gt;</span>It is {new Date().toLocaleTimeString()}.<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+  );
+  ReactDOM.render(
+    &lt;Clock /&gt;,
+    document.getElementById('root')
+  );
+}
+setInterval(tick, 1000);
+
+// 或者这样
+function Clock(props) {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello, world!&lt;/h1&gt;
+      &lt;h2&gt;It is {props.date.toLocaleTimeString()}.&lt;/h2&gt;
+    &lt;/div&gt;
+  );
+}
+
+function tick() {
+  ReactDOM.render(
+    &lt;Clock date={new Date()} /&gt;,
+    document.getElementById('root')
+  );
+}
+setInterval(tick, 1000);
+
+// 但是下面这种就是不可行的，原因在于Clock组件定义被转化成了一个对象，在之后没有发生过变化。
+const Clock = (
+  &lt;div&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;h2&gt;It is {new Date().toLocaleTimeString()}.&lt;/h2&gt;
+  &lt;/div&gt;
+);
+setInterval(
+function(){
+ReactDOM.render(
+  &lt;Clock /&gt;,
+  document.getElementById('root')
+)}, 1000)
+</code></pre>
+<p>这样的代码的问题在于时间的变化应该是<code>Clock</code>组件的行为，而不应该定义在全局。<br><code>state</code>可以帮助我们解决这个问题，state与props类似，但是更私有且被组件所控制，而不是传递过来的。</p>
+<h4 id="将Functional组件转换为Class组件"><a href="#将Functional组件转换为Class组件" class="headerlink" title="将Functional组件转换为Class组件"></a>将Functional组件转换为Class组件</h4><p>Functional组件是无状态组件，不能使用state，所以首先需要将Functional转化为Class组件：</p>
+<ol>
+<li>创建一个和Functional组件名相同的ES6 class继承<code>React.Component</code></li>
+<li>添加空的方法<code>render()</code></li>
+<li>将Functional组件中的函数主体移动<code>render()</code>方法中</li>
+<li>将<code>render()</code>中的<code>props</code>替换成<code>this.props</code></li>
+<li>删除原来的Functional组件声明<br>Class组件不仅可以使用state还可以使用生命周期函数。<br>拿上面的<code>Clock</code>组件作为事例，经过上面的转换，现在的Clock组件应该是这个样子：<pre><code class="jsx"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>{
+render() {
+<span class="keyword">return</span> (
+ <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>
+   <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>
+   <span class="tag">&lt;<span class="name">h2</span>&gt;</span>It is {this.props.date.toLocaleTimeString()}.<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+ <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+);
+}
+}
+</code></pre>
+</li>
+</ol>
+<h4 id="为Class组件添加本地state"><a href="#为Class组件添加本地state" class="headerlink" title="为Class组件添加本地state"></a>为Class组件添加本地state</h4><p>还是上面的<code>Clock</code>组件：</p>
+<ol>
+<li>将<code>render()</code>中的<code>this.props</code>替换成<code>this.state</code></li>
+<li>添加class构造函数(constructor)初始化this.state (Class组件总是应该将props传递给父类)</li>
+<li><p>移除<code>date</code>从组件调用的props中<br>```javascript<br>class Clock extends React.Component {<br>// 这里是步骤2<br>constructor(props) {<br>// 将props传递给父类<br>super(props);<br>this.state = {date: new Date()};<br>}</p>
+<p>render() {<br>return (<br> <div><br>   <h1>Hello, world!</h1><br>   <h2>It is {this.state.date.toLocaleTimeString()}.</h2><br> </div><br>);<br>}<br>}</p>
+</li>
+</ol>
+<p>ReactDOM.render(<br>  <clock>,<br>  document.getElementById(‘root’)<br>);<br>```<br>这样只是初始化了state，后面会设置定时器。</clock></p>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://yoursite.com/2016/11/28/React Docs/" data-id="ciw3mfvsr00050kc7jciy3eis" class="article-share-link">分享到</a><div class="tags"></div><div class="post-nav"><a href="/2016/11/28/redux学习/" class="pre"></a><a href="/2016/11/28/gulp初次实践/" class="next"></a></div><div data-thread-key="2016/11/28/React Docs/" data-title="" data-url="http://yoursite.com/2016/11/28/React Docs/" class="ds-share flat"><div class="ds-share-inline"><ul class="ds-share-icons-16"><li data-toggle="ds-share-icons-more"><a href="javascript:void(0);" class="ds-more">分享到：</a></li><li><a href="javascript:void(0);" data-service="weibo" class="ds-weibo">微博</a></li><li><a href="javascript:void(0);" data-service="qzone" class="ds-qzone">QQ空间</a></li><li><a href="javascript:void(0);" data-service="qqt" class="ds-qqt">腾讯微博</a></li><li><a href="javascript:void(0);" data-service="wechat" class="ds-wechat">微信</a></li></ul><div class="ds-share-icons-more"></div></div></div><div data-thread-key="2016/11/28/React Docs/" data-title="" data-url="http://yoursite.com/2016/11/28/React Docs/" data-author-key="1" class="ds-thread"></div></div></div></div><div class="pure-u-1-4"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/H5/">H5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂记/">杂记</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/javascript-H5/" style="font-size: 15px;">javascript H5</a> <a href="/tags/javascript-React/" style="font-size: 15px;">javascript React</a> <a href="/tags/javascript-移动Web/" style="font-size: 15px;">javascript 移动Web</a> <a href="/tags/javascript-React-redux/" style="font-size: 15px;">javascript React redux</a> <a href="/tags/javascript-项目经验/" style="font-size: 15px;">javascript 项目经验</a> <a href="/tags/H5/" style="font-size: 15px;">H5</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/javascript-React-Webpack/" style="font-size: 15px;">javascript React Webpack</a> <a href="/tags/javascript-构建工具-gulp/" style="font-size: 15px;">javascript 构建工具 gulp</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/搭建博客/" style="font-size: 15px;">搭建博客</a> <a href="/tags/javascript-H5-微信分享/" style="font-size: 15px;">javascript H5 微信分享</a> <a href="/tags/面向对象/" style="font-size: 15px;">面向对象</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/28/前端技术栈/">前端技术栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/28/redux学习/">redux学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/28/React Docs/">React Docs</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/28/gulp初次实践/">gulp初次实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/28/ES6/">ES6</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/25/Promise总结/">Promise总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/16/从零搭建React(3)/">从零开始搭建React(3)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/14/从零搭建React(1)/">从零开始搭建React(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/14/从零搭建React(2)/">从零开始搭建React(2)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/31/一次麻烦的投票/">一次麻烦的投票</a></li></ul></div><div class="widget"><div class="comments-title"><i class="fa fa-comment-o"> 最近评论</i></div><div data-num-items="5" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="32" data-show-title="1" class="ds-recent-comments"></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">Fanz的博客.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script>var duoshuoQuery = {short_name:'Fanz'};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
