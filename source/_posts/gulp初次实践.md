@@ -1,3 +1,12 @@
+---
+title: gulp初次实践
+date: 2016-06-31
+tags: [JavaScript]
+categories: 
+- 前端工具
+comments: true
+---
+
 gulp是前端构建工具，通过一系列gulp插件，可以实现实时监控、格式化代码、合并代码、压缩代码、测试功能等功能。
 
 ------

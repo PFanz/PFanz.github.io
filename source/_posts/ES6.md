@@ -1,3 +1,12 @@
+---
+title: ES6初探
+date: 2016-07-09
+tags: [JavaScript]
+categories: 
+- JavaScript
+comments: true
+---
+
 From [点击这里](http://mp.weixin.qq.com/s?__biz=MzAxMjA5ODQwMQ==&mid=2455058700&idx=1&sn=9361036ef5dc0c27cafb0612d495a85c)
 ## ES6
 ### 定义变量：let、const

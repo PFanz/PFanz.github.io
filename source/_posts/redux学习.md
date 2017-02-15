@@ -1,3 +1,12 @@
+---
+title: Redux学习
+date: 2016-11
+tags: [React,Redux]
+categories: 
+- React
+comments: true
+---
+
 action: 规定动作以及数据
 reducer: 如何更新action中的数据。接受旧的action、state,返回新的。(state)
 store: 调用reducer更改action中的数据
