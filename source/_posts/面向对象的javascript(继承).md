@@ -1,9 +1,9 @@
 ---
 title: 面向对象的javascript(继承)
 date: 2016-06-21 20:33
-tags: [javascript,面向对象]
+tags: [JavaScript, 面向对象]
 categories: 
-- javascript
+- JavaScript
 comments: true
 ---
 　　继承就是从已有的类(对象)派生出新的类(对象)，新的类(对象)会拥有父类的所有属性和方法，并可以添加或修改属性和方法。

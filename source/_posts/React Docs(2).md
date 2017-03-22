@@ -1,7 +1,7 @@
 ---
 title: React Docs（2）
 date: 2017-01-15
-tags: [javascript, React]
+tags: [JavaScript, React]
 categories: 
 - React
 comments: true

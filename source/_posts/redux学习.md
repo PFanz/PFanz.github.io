@@ -1,7 +1,7 @@
 ---
 title: Redux学习
 date: 2016-11
-tags: [React,Redux]
+tags: [React, Redux]
 categories: 
 - React
 comments: true

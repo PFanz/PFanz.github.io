@@ -1,9 +1,9 @@
 ---
 title: React Router学习
 date: 2016-08-24
-tags: javascript React
+tags: [JavaScript, React]
 categories: 
-- javascript
+- JavaScript
 comments: true
 ---
 

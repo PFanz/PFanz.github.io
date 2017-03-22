@@ -1,9 +1,9 @@
 ---
 title: 为gulp添加更多
 date: 2016-07-23
-tags: javascript 构建工具 gulp
+tags: [JavaScript, 构建工具, gulp]
 categories: 
-- javascript
+- JavaScript
 comments: true
 ---
 

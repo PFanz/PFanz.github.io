@@ -1,9 +1,9 @@
 ---
 title: Promise总结
 date: 2016-11-25
-tags: javascript
+tags: JavaScript
 categories: 
-- javascript
+- JavaScript
 comments: true
 ---
 

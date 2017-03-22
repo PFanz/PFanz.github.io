@@ -1,7 +1,7 @@
 ---
 title: 从零开始搭建React(3)
 date: 2016-11-16
-tags: javascript React Webpack
+tags: [JavaScript, React, Webpack]
 categories: 
 - React
 comments: true

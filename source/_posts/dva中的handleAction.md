@@ -1,7 +1,7 @@
 ---
-title: Dva中的handleAction
+title: dva中的handleAction
 date: 2017-03-21
-tags: javascript React
+tags: [JavaScript, React]
 categories: 
 - React
 comments: true
@@ -35,7 +35,7 @@ function handleAction(actionType, reducer = identify) {
   };
 }
 ```
-handleAction接受参数actionType和reducer，reducer默认值是一个直接返回原参数的函数。最后返回的是一个函数，函数中使用了actionType以及reducer，这属于闭包的应用。这个函数如果使用的话是这样的`handleAction(actionType, reducer)(state, action)`，这个应该属于函数的柯里化，对柯里化看了一些资料，但是依然一知半解，这里使用柯里化的目的应该是保存变量actionType和reducer。
+handleAction接受参数actionType和reducer，reducer默认值是一个直接返回原参数的函数。最后返回的是一个函数，函数中使用了actionType以及reducer，这属于闭包的应用。这个函数如果使用的话是这样的`handleAction(actionType, reducer)(state, action)`，<del>这个应该属于函数的柯里化，对柯里化看了一些资料，但是依然一知半解，这里使用柯里化的目的应该是保存变量actionType和reducer</del>(柯里化应该是单个参数，之前理解有误)。
 
 回到handleActions函数中，reducers最后就被保存为了元素是下面这样函数的数组，其中的actionType和reducer是通过闭包保存不同的内容的。
 ```javascript

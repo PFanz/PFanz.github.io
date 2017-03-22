@@ -1,9 +1,9 @@
 ---
-title: 面向对象的javascript(封装)
+title: 面向对象的JavaScript(封装)
 date: 2016-06-17 20:23
-tags: [javascript,面向对象]
+tags: [JavaScript, 面向对象]
 categories: 
-- javascript
+- JavaScript
 comments: true
 ---
 

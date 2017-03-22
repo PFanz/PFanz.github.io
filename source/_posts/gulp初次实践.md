@@ -1,9 +1,9 @@
 ---
 title: gulp初次实践
 date: 2016-06-31
-tags: [JavaScript]
+tags: [JavaScript, gulp, 构建工具]
 categories: 
-- 前端工具
+- JavaScript
 comments: true
 ---
 

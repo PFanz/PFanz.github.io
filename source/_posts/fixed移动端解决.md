@@ -1,9 +1,9 @@
 ---
 title: fixed移动端解决
 date: 2016-07-29
-tags: javascript 移动Web
+tags: [JavaScript, 移动Web]
 categories: 
-- javascript
+- JavaScript
 comments: true
 ---
 

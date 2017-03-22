@@ -1,9 +1,9 @@
 ---
 title: redux应用于React
 date: 2016-09-22
-tags: javascript React redux
+tags: [JavaScript, React, redux]
 categories: 
-- javascript
+- React
 comments: true
 ---
 
