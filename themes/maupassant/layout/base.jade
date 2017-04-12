@@ -41,6 +41,8 @@ html(lang='#{config.language}')
         h1.hidden= current_title
         a#logo(href=url_for('.'))= config.title
         p.description= config.subtitle
+      #music
+        iframe(frameborder='no' border='0' marginwidth='0' marginheight='0' width=280 height=52 src='//music.163.com/outchain/player?type=2&id=35345951&auto=0&height=32')
       #nav-menu
         - for (var i in theme.menu)
           +a_with_current(theme.menu[i].directory, __(theme.menu[i].page), theme.menu[i].icon)
