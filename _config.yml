@@ -5,10 +5,11 @@
 # Site
 title: Fanz
 subtitle: 迷途中的一头猫头鹰~
-description:
+description: Fanz的个人博客
 author: Fanz
 language: zh-CN
 timezone:
+keywords: Fanz 前端 博客
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
