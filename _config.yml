@@ -14,6 +14,7 @@ keywords: Fanz 前端 博客
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://pfanz.github.io
+baiduUrl: https://pfanz.coding.me
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -70,10 +71,18 @@ theme: maupassant
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/PFanz/Fanz.github.io.git
+  repo: 
+    github: https://github.com/PFanz/Fanz.github.io.git
+    coding: https://git.coding.net/PFanz/PFanz.git
   branch: master
 
 # 本地搜索
 search:
   path: search.xml
   field: post
+
+# 生成sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml

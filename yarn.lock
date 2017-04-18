@@ -465,6 +465,12 @@ decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
+deep-assign@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/deep-assign/-/deep-assign-2.0.0.tgz#ebe06b1f07f08dae597620e3dd1622f371a1c572"
+  dependencies:
+    is-obj "^1.0.0"
+
 deep-extend@~0.4.0:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.1.tgz#efe4113d08085f4e6f9687759810f807469e2253"
@@ -891,6 +897,22 @@ hexo-generator-archive@^0.1.4:
     hexo-pagination "0.0.2"
     object-assign "^2.0.0"
 
+hexo-generator-baidu-sitemap:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/hexo-generator-baidu-sitemap/-/hexo-generator-baidu-sitemap-0.1.2.tgz#46521c35cda1666db2c7e50a14fc87c21a7d5634"
+  dependencies:
+    ejs "^1.0.0"
+    hexo "^3.0.0"
+    hexo-generator-baidu-sitemap "0.0.8"
+    utils-merge "^1.0.0"
+
+hexo-generator-baidu-sitemap@0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/hexo-generator-baidu-sitemap/-/hexo-generator-baidu-sitemap-0.0.8.tgz#352b55d017cd1b2947ce9cd60af5c4dbebe880bb"
+  dependencies:
+    ejs "^1.0.0"
+    utils-merge "^1.0.0"
+
 hexo-generator-category@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/hexo-generator-category/-/hexo-generator-category-0.1.3.tgz#b9e6a5862530a83bdd7da4c819c1b9f3e4ccb4b2"
@@ -903,6 +925,14 @@ hexo-generator-index@^0.2.0:
   resolved "https://registry.yarnpkg.com/hexo-generator-index/-/hexo-generator-index-0.2.0.tgz#e6fc8014e0f899362f3a5a9e9428cefebcc91c09"
   dependencies:
     hexo-pagination "0.0.2"
+    object-assign "^4.0.1"
+
+hexo-generator-sitemap:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/hexo-generator-sitemap/-/hexo-generator-sitemap-1.1.2.tgz#7a9edd7578f4a244d5be7c7d3620f9754cab165a"
+  dependencies:
+    minimatch "^3.0.0"
+    nunjucks "^2.3.0"
     object-assign "^4.0.1"
 
 hexo-generator-tag@^0.2.0:
@@ -990,6 +1020,37 @@ hexo-util@^0.6.0:
     highlight.js "^9.4.0"
     html-entities "^1.2.0"
     striptags "^2.1.1"
+
+hexo@^3.0.0:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/hexo/-/hexo-3.3.1.tgz#6c38653b7239536a21036bfcf2e306cb24b98f63"
+  dependencies:
+    abbrev "^1.0.7"
+    archy "^1.0.0"
+    bluebird "^3.4.0"
+    chalk "^1.1.3"
+    cheerio "^0.20.0"
+    deep-assign "^2.0.0"
+    hexo-cli "^1.0.2"
+    hexo-front-matter "^0.2.2"
+    hexo-fs "^0.1.5"
+    hexo-i18n "^0.2.1"
+    hexo-log "^0.1.2"
+    hexo-util "^0.6.0"
+    js-yaml "^3.6.1"
+    lodash "^4.13.1"
+    minimatch "^3.0.0"
+    moment "~2.13.0"
+    moment-timezone "^0.5.4"
+    nunjucks "^2.4.2"
+    pretty-hrtime "^1.0.2"
+    strip-indent "^1.0.1"
+    swig "1.4.2"
+    swig-extras "0.0.1"
+    text-table "^0.2.0"
+    tildify "^1.2.0"
+    titlecase "^1.1.2"
+    warehouse "^2.2.0"
 
 hexo@^3.2.0:
   version "3.2.2"
@@ -1162,6 +1223,10 @@ is-number@^2.0.2, is-number@^2.1.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-2.1.0.tgz#01fcbbb393463a548f2f466cce16dece49db908f"
   dependencies:
     kind-of "^3.0.2"
+
+is-obj@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
 
 is-plain-object@^2.0.1:
   version "2.0.1"
@@ -1641,7 +1706,7 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nunjucks@^2.4.2:
+nunjucks@^2.3.0, nunjucks@^2.4.2:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-2.5.2.tgz#ea7d346e785b8a4874666c3cca9e18c577fba22c"
   dependencies:
