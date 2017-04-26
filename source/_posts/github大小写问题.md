@@ -1,7 +1,7 @@
 ---
 title: GitHub大小写问题
 date: 2017-04-18
-tags: [搭建博客， Hexo]
+tags: [Hexo, Git]
 categories: 
 - 杂记
 comments: true

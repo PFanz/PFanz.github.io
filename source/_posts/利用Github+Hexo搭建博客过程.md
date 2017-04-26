@@ -1,7 +1,7 @@
 ---
 title: 利用Github+Hexo搭建博客过程
 date: 2016-06-09 22:11:35
-tags: [Hexo, 搭建博客]
+tags: Hexo
 categories: 
 - 杂记
 comments: true
