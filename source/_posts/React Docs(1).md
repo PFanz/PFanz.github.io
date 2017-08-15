@@ -7,11 +7,11 @@ categories:
 comments: true
 ---
 
-## 安装
+### 安装
 React在codepen上提供了一个Hello，World项目事例，只需打开[网站](http://codepen.io/gaearon/pen/rrpgNB?editors=0010)，即可尝试React。  
 另外还提供了一个[html文件](https://facebook.github.io/react/downloads/single-file-example.html)的Hello，World项目，项目中引用CDN的react.js、react-dom.js以及用于编译babel的babel.min.js，运行比较缓慢，只适合学习语法使用。
 
-## 创建单页面应用
+### 创建单页面应用
 创建React应用的最好方法是单页面应用，这里是最好方法，也是可以创建多页面应用的。可以通过官方方法去创建你的应用：
 ```shell
 npm install -g create-react-app
@@ -21,7 +21,7 @@ npm start
 ```
 这里不涉及任何后端逻辑和数据库，可以使用任何你想用的后端。create-react-app中使用了Webpack，Babel和ESLint，但是你可以自己去配置他们。
 
-### 将React加入一个现有的应用
+#### 将React加入一个现有的应用
 使用`npm install --save react react-dom`安装React。  
 将其导入你的代码中，如：
 ```javascript
@@ -36,10 +36,10 @@ ReactDOM.render(
 这段代码应该被包含在一个拥有id为root的HTML元素，所以你的HTML文件需要`<div id="root"></div>`  
 当你使用上面方法使用React的时候，需要使用预设为es2015和react的Babel进行转化代码。使用React在生产环境的时候，设置NODE_ENV为"production"。
 
-### 使用ES6和JSX
+#### 使用ES6和JSX
 建议是用Babel将你的ES6和JSX代码转换为JavaScript代码，Babel可以有很多不同的配置，但是确保里面包含`babel-preset-react`和`babel-preset-es2015`。
 
-### 使用CDN
+#### 使用CDN
 如果不想使用npm，可以使用CDN
 ```html
 <script src="https://unpkg.com/react@15/dist/react.js"></script>
@@ -51,7 +51,7 @@ ReactDOM.render(
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
 ```
 
-## JSX
+### JSX
 在JSX中，可以在任意地方插入JavaScript代码，只需要将JavaScript放在大括号中即可。下面的代码都是合法的：
 ```jsx
 function formatName(user) {
@@ -76,20 +76,20 @@ ReactDOM.render(
 ```
 将JSX代码放在小括号中，像HTML代码一样换行，可以方便阅读。
 
-#### JSX也是表达式
+##### JSX也是表达式
 JSX最后也被编译成JavaScript代码，这就以为着JSX可以赋值给一个JavaScript变量，可以作为方法的参数，可以被方法返回。
 
-#### JSX添加HTML属性
+##### JSX添加HTML属性
 可以用字符串设置属性，也可以通过使用{}将JavaScript表达式赋值给属性。
 
-#### 闭合JSX
+##### 闭合JSX
 如果JSX是空的可以使用`/>`来闭合标签，如果包含其他标签，也可以使用</***>闭合。  
 虽然JSX很接近HTML，但是还是有些不同，比如属性使用小驼峰法命名，class使用className，for使用forHtml等。
 
-#### JSX防止注入攻击
+##### JSX防止注入攻击
 默认情况下，React DOM在渲染JSX之前会对其进行编码。
 
-#### JSX描述对象
+##### JSX描述对象
 Babel会将JSX转化为React.createElement()形式，比如下面这样：
 ```jsx
 const element = (
@@ -117,10 +117,10 @@ const element = {
 }
 ```
 
-## 组件
+### 组件
 将你的页面分成一个个组件，每个组件都是独立的、可以重复使用的。组件就像JavaScript中的方法，可以接受一些输入参数，返回React元素
 
-#### Funtional 和 Class 组件
+##### Funtional 和 Class 组件
 定义组件最简单的方式是使用JavaScript方法：
 ```javascript
 function Welcome (props) {
@@ -139,7 +139,7 @@ class Welcome extends React.Component {
 上面两种定义组件的方法是等价的。  
 但是Class组件能够添加一些额外的功能，我们将在下面讨论。在不需要这些额外的方法，可以使用Functional组件。
 
-#### 渲染组件
+##### 渲染组件
 渲染如下：
 ```javascript
 function Welcome(props) {
@@ -158,11 +158,11 @@ ReactDOM.render(
   3. Welcome组件返回`<h1>Hello, Sara</h1>`。
   4. React将`<h1>Hello, Sara</h1>`更新到页面。
 
-#### 组件组合
+##### 组件组合
 组件可以任意组合。  
 通常情况，React应用中在最顶端是一个`App`组件。组件必须有一个根元素，也就是所有元素都得包裹起来。
 
-#### 提取组件
+##### 提取组件
 不要担心组件被拆分的太小。下面是一个对组件进行拆分的例子。  
 Comment组件：  
 ```javascript
@@ -234,7 +234,7 @@ function Comment(props) {
 }
 ```
 
-#### Props是只读的
+##### Props是只读的
 无论是Funcional还是Class组件，都是不能够修改props的。
 ```javascript
 // 下面这个是纯函数，因为它没有试图改变自己的输入，并且对相同的输入会有相同的输出。
@@ -251,7 +251,7 @@ function withdraw(account, amount) {
 所有的React组件对于props参数必须像纯函数一样，也就是不会试图去修改props，并且对于相同的props会有相同的输出。  
 当然，React也提供了随时间动态变化组件的方法，state允许根据用户行为、网络反馈等改变React组件的输出形式，这并不违背React纯函数原则。
 
-## state 和 生命周期
+### state 和 生命周期
 请看下面一段代码：
 ```javascript
 const Clock = (
@@ -317,7 +317,7 @@ ReactDOM.render(
 这样的代码的问题在于时间的变化应该是`Clock`组件的行为，而不应该定义在全局。  
 `state`可以帮助我们解决这个问题，state与props类似，但是更私有且被组件所控制，而不是传递过来的。
 
-#### 将Functional组件转换为Class组件
+##### 将Functional组件转换为Class组件
 Functional组件是无状态组件，不能使用state，所以首先需要将Functional转化为Class组件：
   1. 创建一个和Functional组件名相同的ES6 class继承`React.Component`
   2. 添加空的方法`render()`
@@ -339,7 +339,7 @@ class Clock extends React.Component {
 }
 ```
 
-#### 为Class组件添加本地state
+##### 为Class组件添加本地state
 还是上面的`Clock`组件：
   1. 将`render()`中的`this.props`替换成`this.state`
   2. 添加class构造函数(constructor)初始化this.state (Class组件总是应该将props传递给父类)

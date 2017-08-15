@@ -7,8 +7,6 @@ categories:
 comments: true
 ---
 
-### Redux应用于React  
-
 　　不知道有多少人和我一样，redux的文档看了一遍又一遍，各种教程翻来翻去，还是不知道在自己的React项目中该如何加入redux。  
 　　经过这段时间，总算有些入门的感觉，明白大致的编写流程。  
 　　对于在React项目中使用redux，首先需要理解`展示型组件和容器型组件`。  

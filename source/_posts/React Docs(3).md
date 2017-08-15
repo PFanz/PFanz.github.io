@@ -7,7 +7,7 @@ categories:
 comments: true
 ---
 
-## 列表和键（key）
+### 列表和键（key）
 在React中转换数组和在JavaScript中几乎相同，可以通过数组的map方法渲染多个组件：
 ```javascript
 // 显示内容为1到5的列表
@@ -47,7 +47,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-### 键（key）
+#### 键（key）
 key可以帮助确定哪些项发生了变化，或者添加、删除了哪些项，通常使用数据的id作为key，这样在整个列表中key的值是唯一的。
 key只有在周围环境是数据的情况下才有意义，如下：
 ```javascript
@@ -83,7 +83,7 @@ ReactDOM.render(
 ```
 其实只需要记得在map函数中使用key就可以了。
 
-### key在兄弟节点间是唯一的
+#### key在兄弟节点间是唯一的
 数组中使用key需要是唯一的，但是在全局不需要是唯一的。当生成两个不同的数组，我们可以使用相同的键。  
 key作为组件的标识，但是不会将值传递给组件，如果需要使用key中的值，需要另外传给组件的一个属性。  
 JSX中可以嵌套map函数。这种形式有时候会使代码更加清晰，有时候也会被滥用，这就需要你来决定是否需要提取出来，以提高可读性。
@@ -91,7 +91,7 @@ JSX中可以嵌套map函数。这种形式有时候会使代码更加清晰，�
 ## 表单
 表单元素自身本来就拥有一些属性（比如name等），表单在用户提交时，会执行默认的表单行为，提交到一个新的页面。但是在多数情况下，我们使用JavaScript函数处理表单的提交，处理用户提交的数据。实现这种方法的组件我们称为“受控组件”。
 
-### 受控组件
+#### 受控组件
 在HTML中，表单元素如`<input>`，`<textarea>`和`<select>`通常保持自己的状态，并根据用户的输入进行更新。而在React中，状态一般保存都state属性中，并且state属性只能通过`setState()`更新。  
 我们可以将React的state设置成HTML的输入将两者结合，然后React组件还需要控制用户的输入，这样的组件被称为“受控组件”。
 ```javascript
@@ -128,13 +128,13 @@ class NameForm extends React.Component {
 ```
 其中将input元素的value值交给React组件的state，通过handleChange函数响应每次输入来更新state。使用受控组件，每个输入都会关联到处理函数，这使得可以直接修改或验证用户输入。
 
-### textarea标签
+#### textarea标签
 在React中，textarea标签也使用了value属性来代替在元素中的显示值。
 
-### select标签
+#### select标签
 在HTML中使用`<select>`标签时候，可以使用option中selected属性表示当前选择的选项。而在React中，将当前选项保存在select中的value，当select中的value与option的Value相同时，该选项被选择。
 
-### 受控组件的代码
+#### 受控组件的代码
 使用受控组件有时候是很复杂的，因为你需要为更改数据的所有方式编写事件处理函数，并通过React组件管理所有输入状态。这时候可能需要不受控组件。
 
 ## 提升state属性
@@ -178,7 +178,7 @@ class Calculator extends React.Component {
 }
 ```
 
-### 添加第二个输入
+#### 添加第二个输入
 输入一个华氏温度，能够和摄氏度相互转换。  
 首先定义两个函数实现华氏度和摄氏度转换，再定义一个函数实现将值转换为字符串：
 ```javascript
@@ -266,14 +266,14 @@ class Calculator extends React.Component {
   }
 }
 ```
-### 总结
+#### 总结
 对于React中的任何数据，应该有一个单一的来源。通常将state添加到需要渲染的组件，如果其他组件也需要该state，将它提升到最接近的共同父组件中，而不是试图同步不同组件之间的state。这种解决方法就是自上而下的数据流。  
 提升state需要编写更多的代码，但是这可以方便寻找和修改bug。state存在一些组件中，在这些组件中都可以单独改变该state，这可以减少错误。另外，你可以控制用户的输入。  
 如果某个state属性，可以通过props或者其他state属性得到，我们可能就不需要该state属性。
 
 ## 组件的组成和继承
 React组件具有强大的组合功能，我们建议使用组合来重用组件之间的代码，而不是继承。
-### 包含
+#### 包含
 一些组件提前不知道自己包含什么。可以使用props的children来传递包含的组件
 ```javascript
 // 使用props.children来调用被包含的组件

@@ -7,8 +7,6 @@ categories:
 comments: true
 ---
 
-## Promise总结
-
 因为最近项目中用到了ajax，想尝试下Promise，所以看了下ES6中的[Promise](http://es6.ruanyifeng.com/#docs/promise)。
 
 一般用法：
