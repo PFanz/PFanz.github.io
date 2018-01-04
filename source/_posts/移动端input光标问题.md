@@ -36,7 +36,7 @@ $mobileI.val(temp.join(''))
 
 在移动端却会出现问题，在添加空格的情况下，光标会在最后一个字母前面。
 
-![光标位置](./images/input_phone.jpg)
+![光标位置](/images/input_phone.jpg)
 
 通过selectionStart获取光标没有问题，通过设置selectionStart也没办法解决问题。
 

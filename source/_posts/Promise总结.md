@@ -2,7 +2,7 @@
 title: Promise总结
 date: 2016-11-25
 tags: JavaScript
-categories: 
+categories:
 - JavaScript
 comments: true
 ---
@@ -41,7 +41,7 @@ Promise是异步编程的一种解决方案。
 首先，我们通过chrome浏览器控制台来看一下Promise对象的样子。  
 在控制台输入`Promise`然后回车，会看到输出`function Promise() { [native code] }`。然后我们new一个Promise出来看一下，`var promise = new Promise(function(){})`，在创建Promise对象时候，必须传递一个函数，否则会报错。  
 看一下promise：  
-![Promise对象](./images/Promise_Object.png)  
+![Promise对象](/images/Promise_Object.png)  
 包括\_\_proto\_\_，[[PromiseStatus]]，[[PromiseValue]]三个属性，其中\_\_proto\_\_主要包括catch、then、constructor方法。所以我们对Promise的学习主要就是[[PromiseStatus]]，[[PromiseValue]]属性和catch，then方法。
 
 ### Promise的三种状态

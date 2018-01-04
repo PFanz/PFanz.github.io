@@ -60,7 +60,7 @@ const store = Store.createStore(todos)
 
 Redux中的数据流
 
-![Redux数据流](./images/redux简化数据流.jpeg)
+![Redux数据流](/images/redux简化数据流.jpeg)
 
 
 ```JavaScript

@@ -1,8 +1,8 @@
 ---
 title: 批量移动QQ邮箱文件夹
 date: 2017-03-14
-tags: JavaScript 
-categories: 
+tags: JavaScript
+categories:
 - JavaScript
 comments: true
 ---
@@ -34,7 +34,7 @@ comments: true
 
 我们要实现的功能挺简单的，点击全选按钮，触发移动到里面的收件箱按钮。  
 QQ邮箱网页版是多个iframe嵌套实现的，也正是因为这样的iframe嵌套结构，使我们能够在邮件再次加载的时候我们的js代码还存在环境中，(这样是不是意味着对某个网页进行批量操作时，操作如果会刷新页面，可以使用iframe嵌套来创造程序运行的环境呢？)我们用的到主要是邮件这个ifame。  
-iframe的操作主要包括一个top，一个parent。每个iframe相当于一个window对象，通过iframe的name可以访问响应的iframe。在chrome浏览器的console中是可以切换当前代码在哪个iframe下执行的。![iframe](./images/iframe.png)  
+iframe的操作主要包括一个top，一个parent。每个iframe相当于一个window对象，通过iframe的name可以访问响应的iframe。在chrome浏览器的console中是可以切换当前代码在哪个iframe下执行的。![iframe](/images/iframe.png)  
 我们需要操作iframe位于mainFrame中，如果将执行代码放在mainFrame中
 ```JavaScript
 function move () {
