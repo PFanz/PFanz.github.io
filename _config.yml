@@ -4,7 +4,7 @@
 
 # Site
 title: Fanz
-subtitle: 下一个目标：能够大声说出“不要拿你的爱好，挑战我的工作”
+subtitle: 随时准备离职得写代码，随时准备面试得学习
 description: Fanz的个人博客
 author: Fanz
 language: zh-CN
@@ -71,7 +71,7 @@ theme: maupassant
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: 
+  repo:
     github: https://github.com/PFanz/Fanz.github.io.git
     coding: https://git.coding.net/PFanz/PFanz.git
   branch: master
