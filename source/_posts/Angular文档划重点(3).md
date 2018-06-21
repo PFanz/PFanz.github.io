@@ -56,3 +56,9 @@ comments: true
 * 通过设置reportProgress: true可以监听进度事件，主要包括event.loaded和event.total
 
 ### 路由
+
+* 在导航时的每个生命周期成功完成时，路由器会构建出一个`ActivatedRoute`组成的树，它表示路由器的当前状态
+
+* 需要根据参数，同一组件切换不同数据，可以使用`ParamMap`，返回`Observable`；当不需要`Observable`时，可以使用`snapshot`
+
+* 用CanActivate来处理导航到某路由的情况；用CanActivateChild来处理导航到某子路由的情况；用CanDeactivate来处理从当前路由离开的情况；用Resolve在路由激活之前获取路由数据；用CanLoad来处理异步导航到某特性模块的情况。
