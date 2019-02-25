@@ -373,7 +373,7 @@ div {
 }
 
 .page-navigator {
-  border-top: 1px solid #ddd;
+  // border-top: 1px solid #ddd;
   list-style: none;
   margin-top: 25px;
   padding: 25px 0 0;
@@ -925,6 +925,11 @@ screen and (min-width: 48em) {
 }
 
 /* read more*/
+.readmore::after {
+  display: block;
+  content: '';
+  clear: both;
+}
 
 .readmore a {
   font-size: 14px;

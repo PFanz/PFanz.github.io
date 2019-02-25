@@ -73,7 +73,6 @@ deploy:
   type: git
   repo:
     github: https://github.com/PFanz/Fanz.github.io.git
-    coding: https://git.coding.net/PFanz/PFanz.git
   branch: master
 
 # 本地搜索

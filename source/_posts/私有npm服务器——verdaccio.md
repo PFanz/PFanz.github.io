@@ -7,6 +7,10 @@ categories:
 comments: true
 ---
 
+对于一些不方便公开的JavaScript库，可以通过自建私有npm服务器的方式，搭建公司内部的包管理服务器。
+
+<!-- more -->
+
 ### 介绍
 搭建私有的npm服务器，可以同时安装私有npm包和官方npm包。
 

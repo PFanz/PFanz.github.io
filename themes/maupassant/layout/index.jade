@@ -42,6 +42,8 @@ block content
             != post.content.substring(0, br)
       p(class='readmore')
         a(href=url_for(post.path))= __('Readmore')
+    
+    hr(color='#ddd')
 
   include _partial/paginator
   if theme.disqus

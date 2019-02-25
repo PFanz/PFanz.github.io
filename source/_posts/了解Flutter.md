@@ -7,6 +7,10 @@ categories:
 comments: true
 ---
 
+Flutter是Google新发布的跨平台解决方案，目前可以用于Android和iOS客户端的开发。
+
+<!-- more -->
+
 ### 跨平台解决方案
 
 目前跨平台解决方案主要有WebView（Cordova）、转化为系统平台自带控件（RN），Flutter采取得的是使用自身的高性能渲染引擎(Skia)自绘。
