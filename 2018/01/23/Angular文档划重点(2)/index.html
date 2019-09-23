@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Fanz的个人博客"><meta name="keywords" content="Fanz 前端 博客"><meta name="baidu-site-verification" content="kfCLKEy1X0"><meta name="google-site-verification" content="k_H14O9gOsnbdRWGJPErB2U0CWfxPjNdrTH6QLDAs7g"><title>Angular文档划重点(2) | Fanz</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Angular文档划重点(2)</h1><a id="logo" href="/.">Fanz</a><p class="description">随时准备离职得写代码，随时准备面试得学习</p></div><div id="music"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="52" src="//music.163.com/outchain/player?type=2&amp;id=35345951&amp;auto=0&amp;height=32"></iframe></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Angular文档划重点(2)</h1><div class="post-meta">Jan 23, 2018<span> | </span><span class="category"><a href="/categories/JavaScript/">JavaScript</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><a data-disqus-identifier="2018/01/23/Angular文档划重点(2)/" href="/2018/01/23/Angular文档划重点(2)/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><h4 id="用户输入"><a href="#用户输入" class="headerlink" title="用户输入"></a>用户输入</h4><ul>
+<li><p>绑定用户输入事件：(click) =&gt; “toClick()”</p>
+</li>
+<li><p>通过$event获取事件，尽量传递值，而不是事件</p>
+</li>
+<li><p>从模板引用变量获取用户输入的值： #var 必须绑定事件（即使是空事件(keyup)=”0”）</p>
+</li>
+</ul>
+<h4 id="模板驱动表单"><a href="#模板驱动表单" class="headerlink" title="模板驱动表单"></a>模板驱动表单</h4><ul>
+<li><p>使用绑定语法[(ngModel)]=””，并且必须有name属性</p>
+</li>
+<li><p>通过在form标签上添加#var=”ngForm”，可以引用form表单，提供var.from.valid等属性</p>
+</li>
+<li><p>需要引入FormsModule模块</p>
+</li>
+<li><p>ngModel会跟踪修改状态与有效性验证，包括添加类名ng-touched与ng-untouched、ng-dirty与ng-pristine、ng-valid与ng-invalid</p>
+</li>
+<li><p>通过#var=”ngModel”可以获得元素，并且可以访问touched、untouched、dirty等属性</p>
+</li>
+<li><p>使用ngSubmit提交表单</p>
+</li>
+</ul>
+<h4 id="模型驱动表单（响应式表单）"><a href="#模型驱动表单（响应式表单）" class="headerlink" title="模型驱动表单（响应式表单）"></a>模型驱动表单（响应式表单）</h4><ul>
+<li><p>属性关联到模板： 模板中[formControl]=”var”，类中var = new FormControl()</p>
+</li>
+<li><p>导入ReactiveFormsModule</p>
+</li>
+<li><p>AbstractControl是三个具体表单类的抽象基类。并为它们提供了一些共同的行为和属性，其中有些是可观察对象</p>
+</li>
+<li><p>FormControl用于跟踪一个单独的表单控件的值和有效性状态。它对应于一个HTML表单控件，比如输入框和下拉框</p>
+</li>
+<li><p>FormGroup用于跟踪一组AbstractControl的实例的值和有效性状态。该组的属性中包含了它的子控件。</p>
+</li>
+<li><p>FormArray用于跟踪AbstractControl实例组成的有序数组的值和有效性状态</p>
+</li>
+<li><p>FormGroup使用： 模板中[formGroup]=”heroForm”,[formControl]=”name”需要修改为formControlName=”name”,类中heroForm = new FormGroup({name: new FormControl()})。novalidate可以阻止浏览器默认表单校验</p>
+</li>
+<li><p>FormBuilder可以减少FormControl的编写： 明确类型var: FormGroup；构造函数中传入FormBuilder: constructor(private fb: FormBuilder)；创建表单this.var = this.fb.group({name: ‘’, // &lt;— the FormControl called “name”})</p>
+</li>
+<li><p>Validators验证器：上例中this.var = this.fb.group({name: [‘’, Validators.required]})</p>
+</li>
+<li><p>多级FormGroup： 同样将[formGroup]=”var”改为formGroupName=”var”</p>
+</li>
+<li><p>通过formGroup.get(‘var’)可以获得单个formControl状态：主要包括value、status、pristine、untouched等</p>
+</li>
+</ul>
+<h4 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h4><ul>
+<li><p>模板驱动表单中，通过#var=”ngModel”可以将NgModel导出为变量var。</p>
+</li>
+<li><p>响应式表单中，实例化FormControl时第二个参数可以传入同步验证器，第三个参数可以传入异步验证器。</p>
+</li>
+</ul>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://pfanz.github.io/2018/01/23/Angular文档划重点(2)/" data-id="ck0vsctg70004wkti9643em3y" class="article-share-link">分享到</a><div class="tags"><a href="/tags/Angular/">Angular</a></div><div class="post-nav"><a href="/2018/01/23/Angular文档划重点(3)/" class="pre">Angular文档划重点(3)</a><a href="/2018/01/23/Angular文档划重点(1)/" class="next">Angular文档划重点(1)</a></div><div id="disqus_thread"><script>var disqus_shortname = 'blog-fanz';
+var disqus_identifier = '2018/01/23/Angular文档划重点(2)/';
+var disqus_title = 'Angular文档划重点(2)';
+var disqus_url = 'https://pfanz.github.io/2018/01/23/Angular文档划重点(2)/';
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//blog-fanz.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="https://pfanz.github.io"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/H5/">H5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂记/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/H5/" style="font-size: 15px;">H5</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/移动端/" style="font-size: 15px;">移动端</a> <a href="/tags/Flutter/" style="font-size: 15px;">Flutter</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/API/" style="font-size: 15px;">API</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/移动Web/" style="font-size: 15px;">移动Web</a> <a href="/tags/项目经验/" style="font-size: 15px;">项目经验</a> <a href="/tags/gulp/" style="font-size: 15px;">gulp</a> <a href="/tags/构建工具/" style="font-size: 15px;">构建工具</a> <a href="/tags/Redux/" style="font-size: 15px;">Redux</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/Webpack/" style="font-size: 15px;">Webpack</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/汇总/" style="font-size: 15px;">汇总</a> <a href="/tags/微信小程序/" style="font-size: 15px;">微信小程序</a> <a href="/tags/微信分享/" style="font-size: 15px;">微信分享</a> <a href="/tags/npm/" style="font-size: 15px;">npm</a> <a href="/tags/面向对象/" style="font-size: 15px;">面向对象</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/09/20/多帐号聊天项目设计/">多帐号聊天项目设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/11/从Vue Function-based API RFC说起/">从Vue Function-based API RFC说起</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/22/GMTC大前端大会总结/">GMTC大前端大会总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/04/Svelte初看/">Svelte初看</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/25/Vue多组件仓库开发与发布/">Vue多组件仓库开发与发布</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/02/春节活动小结/">春节活动小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/20/私有npm服务器——verdaccio/">私有npm服务器——verdaccio</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/13/Flutter正在加载的实现/">Flutter正在加载的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/13/了解Flutter/">了解Flutter</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/21/初次selenium/">初次selenium</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//blog-fanz.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://github.com/PFanz" title="github" target="_blank">github</a><ul></ul><a href="mailto:zhongguofeifan@126.com" title="邮箱" target="_blank">邮箱</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">Fanz.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-97219922-1','auto');ga('send','pageview');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
