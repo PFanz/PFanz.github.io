@@ -19,5 +19,10 @@
     "hexo-renderer-sass": "^0.4.0",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3"
+  },
+  "scripts": {
+    "start": "hexo s",
+    "clean": "hexo clean",
+    "publish": "hexo clean && hexo g && hexo d && git commit -a -m 'add' && git push"
   }
 }
