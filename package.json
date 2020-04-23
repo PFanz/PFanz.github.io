@@ -23,6 +23,6 @@
   "scripts": {
     "start": "hexo s",
     "clean": "hexo clean",
-    "publish": "hexo clean && hexo g && hexo d && git add . && git commit  --allow-empty && git push"
+    "publish": "hexo clean && hexo g && hexo d && git add . && git commit --allow-empty-message && git push"
   }
 }
